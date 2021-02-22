@@ -302,7 +302,7 @@ module.exports = class List {
         undefined,
         item,
         operation,
-        { context }
+        { context, itemId: item && item.id }
       );
       if (!access) {
         // If the client handles errors correctly, it should be able to
