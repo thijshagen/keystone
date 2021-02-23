@@ -52,7 +52,7 @@ export type SessionContext<T> = {
 };
 
 export type KeystoneContext = {
-  schemaName: 'public';
+  schemaName: 'public' | 'internal';
   lists: KeystoneListsAPI<any>;
   totalResults: number;
   keystone: BaseKeystone;
@@ -64,6 +64,7 @@ export type KeystoneContext = {
   maxTotalResults: number;
   sudo: () => KeystoneContext;
   exitSudo: () => KeystoneContext;
+  internal: () => KeystoneContext;
   withSession: (session: any) => KeystoneContext;
   req?: IncomingMessage;
 } & AccessControlContext &
